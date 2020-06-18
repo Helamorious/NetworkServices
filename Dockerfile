@@ -2,6 +2,8 @@ FROM ubuntu:latest
 
 MAINTAINER github.com/Helamorious
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 WORKDIR /etc/
 
 RUN apt-get -y update \
