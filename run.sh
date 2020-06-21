@@ -4,6 +4,8 @@ if [ ! -f /var/lib/dhcp/dhcpd.leases ]; then
 	touch /var/lib/dhcp/dhcpd.leases
 fi
 
-/usr/sbin/named -g >> /var/log/named.log 2>&1 &
+chmod 644 /etc/bind/rndc.key
+
+/usr/sbin/named -g &
 sleep 1
-/usr/sbin/dhcpd -d -f >> /var/log/dhcp.log 2>&1 
+/usr/sbin/dhcpd -d -f
