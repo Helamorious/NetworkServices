@@ -10,6 +10,6 @@ RUN apt-get -y update \
   && apt-get -y upgrade \
   && apt-get install -y bind9 isc-dhcp-server
 
-ADD run.sh /
+ADD docker-entrypoint.sh /
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["docker-entrypoint.sh"]
